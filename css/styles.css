@@ -1,0 +1,227 @@
+:root {
+    --color-primary-text: #333;
+    --color-secondary-text: #666;
+    --color-background-light: #f8f8f8;
+    --color-background-white: #fff;
+    --color-border: #eee;
+    --color-link: #007bff;
+    --color-link-hover: #0056b3;
+    --color-highlight: #e0f2f7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background-white);
+    color: var(--color-primary-text);
+    line-height: 1.6;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+header {
+    background-color: var(--color-background-white);
+    border-bottom: 1px solid var(--color-border);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: var(--color-primary-text);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap; 
+    align-items: flex-start;
+}
+
+.sidebar-left,
+.sidebar-right {
+    background-color: var(--color-background-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.sidebar-left {
+    flex: 0 0 200px;
+    min-width: 180px;
+}
+
+.sidebar-right {
+    flex: 0 0 250px;
+    min-width: 220px;
+}
+
+.sidebar-left h2,
+.sidebar-right h3 {
+    margin-top: 0;
+    color: var(--color-secondary-text);
+    font-size: 18px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.sidebar-left ul,
+.sidebar-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-left li,
+.sidebar-right li {
+    margin-bottom: 8px;
+}
+
+.sidebar-left a,
+.sidebar-right a {
+    text-decoration: none;
+    color: var(--color-link);
+    padding: 5px 0;
+    display: block;
+    transition: color 0.2s ease;
+}
+
+.sidebar-left a:hover,
+.sidebar-right a:hover {
+    color: var(--color-link-hover);
+}
+
+.sidebar-left a[aria-current="page"] {
+    font-weight: bold;
+    color: var(--color-primary-text);
+}
+
+.main-article {
+    flex: 1;
+    min-width: 0;
+    background-color: var(--color-background-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.main-article h1 {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--color-primary-text);
+}
+
+.main-article h2 {
+    font-size: 24px;
+    color: var(--color-primary-text);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 8px;
+}
+
+.main-article p {
+    margin-bottom: 1em;
+    color: var(--color-primary-text);
+}
+
+.main-article p .highlight {
+    background-color: var(--color-highlight);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sidebar-left,
+    .sidebar-right {
+        flex: auto;
+        width: 100%;
+    }
+
+    .main-article {
+        order: 1;
+    }
+    .sidebar-right {
+        order: 2;
+    }
+    .sidebar-left {
+        order: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    header, main {
+        padding: 0 15px;
+    }
+
+    .main-article {
+        padding: 20px;
+    }
+    .main-article h1 {
+        font-size: 28px;
+    }
+    .main-article h2 {
+        font-size: 22px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: var(--color-background-light);
+    color: var(--color-secondary-text);
+    font-size: 14px;
+    border-top: 1px solid var(--color-border);
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px solid var(--color-link-hover);
+    outline-offset: 2px;
+}
